@@ -1,6 +1,8 @@
 var toggleb = document.getElementById("toggle");
 var clearb = document.getElementById("clear");
 
+var shape = document.getElementById("shape");
+
 var c = document.getElementById("slate");
 var canvas = c.getBoundingClientRect();
 
@@ -24,7 +26,14 @@ c.addEventListener("click", function(e)
 
 var toggle = function(e)
 {
-
+    if (shape.innerHTML == "rectangle")
+    {
+	shape.innerHTML = "circle";
+    }
+    else
+    {
+	shape.innerHTML = "rectangle";
+    }
 };
 
 var clear = function(e)
@@ -41,7 +50,28 @@ var draw = function(e)
 
     console.log(x + " " + y);
 
+    if (shape.innerHTML == "circle")
+    {
+	drawCircle(e, x, y);
+    }
+    else
+    {
+	drawRect(e, x, y);
+    }
+    
+};
+
+var drawCircle = function(e, xcor, ycor)
+{
     ctx.fillStyle = "#ff0000";
-    ctx.fillRect(x, y, 20, 20);
+    ctx.beginPath();
+    ctx.ellipse(xcor, ycor, 20, 20, 0, 0, 2 * Math.PI);
+    ctx.fill();
+};
+
+var drawRect = function(e, xcor, ycor)
+{
+    ctx.fillStyle = "#ff0000";
+    ctx.fillRect(xcor, ycor, 20, 20);
 };
 
