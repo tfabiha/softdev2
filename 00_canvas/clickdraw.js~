@@ -1,4 +1,0 @@
-var togglebutt = document.getElementById("toggle");
-var clearbutt = document.getElementById("clear");
-
-var c = document.getElementById("slate");
