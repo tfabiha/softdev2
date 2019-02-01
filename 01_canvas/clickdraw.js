@@ -8,12 +8,6 @@ const ctx = c.getContext("2d");
 
 var drawState = "BOX" //"BOX" is box, "DOT" is dot
 
-var t = document.getElementById("toggle");
-t.addEventListener('click', toggleState)
-
-var cls = document.getElementById("clear");
-cls.addEventListener('click', clear);
-
 var toggleState = function(e) { //Toggles between placing dot or a box
 
     if(drawState == "BOX")
@@ -78,3 +72,9 @@ var clear = function(e) { // clears the canvas
 // Not incorporated in the program:
 // e.preventDefault()
 // --- when called it prevents the default event from occurring
+
+var t = document.getElementById("toggle");
+t.addEventListener('click', toggleState)
+
+var cls = document.getElementById("clear");
+cls.addEventListener('click', clear);
