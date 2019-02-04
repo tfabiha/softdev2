@@ -23,6 +23,8 @@ var requestID;
 var radius = 0;
 var growing = true;
 
+var on = false;
+
 // clears the canvas
 var clear = function(e)
 {
@@ -34,7 +36,8 @@ var clear = function(e)
 // connects new dot to the previous dot if applicable
 var drawDot = function(e)
 {
-    console.log("(" + e.clientX + ", " + e.clientY + ")");
+    console.log(radius);
+    clear();
 
     // e.offsetX is used to return the x coordinate of mouse cursor
     // in relation to the div in which your cursor is in
@@ -53,7 +56,7 @@ var drawDot = function(e)
 	growing = false;
     }
 
-    if (radius = 0)
+    if (radius <= 0)
     {
 	growing = true;
     }
@@ -66,7 +69,9 @@ var drawDot = function(e)
     {
 	radius -= 1;
     }
-	
+
+    on = true;
+    
     requestID = window.requestAnimationFrame(drawDot);
 };
 
@@ -74,8 +79,17 @@ var drawDot = function(e)
 
 var stopIt = function()
 {
-    // something here
+    requestID = window.cancelAnimationFrame(requestID);
+    on = false;
 };
 
-dotButton.addEventListener("click", drawDot);
-stopButton.addEventListener("click", stopIt);
+dotButton.addEventListener("click", function()
+			   {
+			       if (!on)
+				   drawDot();
+			   });
+stopButton.addEventListener("click", function()
+			    {
+				if (on)
+				    stopIt();
+			    });
