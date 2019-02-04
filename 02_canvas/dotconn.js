@@ -1,7 +1,7 @@
 // OnePlusOneIsThree -- Soojin Choi, Tabassum Fabiha
 // SoftDev2 pd7
 // K02 - Connecting the Dots
-// 2019-01-31   
+// 2019-02-03
 
 // Not incorporated in the program:
 // e.preventDefault()
