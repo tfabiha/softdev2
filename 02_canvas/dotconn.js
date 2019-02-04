@@ -33,6 +33,9 @@ c.addEventListener("click", function(e)
 var clear = function(e)
 {
     ctx.clearRect(0, 0, c.width, c.height);; // clear canvas the size of the canvas
+
+    x_prev = -1;
+    y_prev = -1;
 };
 
 // draws a dot on the canvas
