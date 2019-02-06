@@ -1,6 +1,6 @@
-// OnePlusOneIsThree -- Soojin Choi, Tabassum Fabiha
+// DuckDuck - Robin Han, T Fabiha
 // SoftDev2 pd7
-// K02 - Connecting the Dots
+// K03 - They lock us in the tower whenever we get caught ...which is often
 // 2019-02-03
 
 // Not incorporated in the program:
