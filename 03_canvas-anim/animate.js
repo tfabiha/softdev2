@@ -23,8 +23,6 @@ var requestID;
 var radius = 0;
 var growing = true;
 
-var on = false;
-
 // clears the canvas
 var clear = function(e)
 {
@@ -36,6 +34,7 @@ var clear = function(e)
 // connects new dot to the previous dot if applicable
 var drawDot = function(e)
 {
+    window.cancelAnimationFrame(requestID);
     console.log(radius);
     clear();
 
@@ -69,8 +68,6 @@ var drawDot = function(e)
     {
 	radius -= 1;
     }
-
-    on = true;
     
     requestID = window.requestAnimationFrame(drawDot);
 };
@@ -79,17 +76,8 @@ var drawDot = function(e)
 
 var stopIt = function()
 {
-    requestID = window.cancelAnimationFrame(requestID);
-    on = false;
+    window.cancelAnimationFrame(requestID);
 };
 
-dotButton.addEventListener("click", function()
-			   {
-			       if (!on)
-				   drawDot();
-			   });
-stopButton.addEventListener("click", function()
-			    {
-				if (on)
-				    stopIt();
-			    });
+dotButton.addEventListener("click", drawDot);
+stopButton.addEventListener("click", stopIt);
