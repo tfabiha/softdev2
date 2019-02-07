@@ -1,6 +1,6 @@
-// GeeseGrease -- Robin Han, Tabassum Fabiha
+// GeeseGrease -- Robin Han, T Fabiha
 // SoftDev2 pd7
-// K03 -- They lock us in the tower whenever we get caught
+// K04 -- What is it saving the screen from?
 // 2019-02-06
 
 var canvas = document.getElementById("playground");
