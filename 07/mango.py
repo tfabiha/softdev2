@@ -30,13 +30,13 @@ def with_actor(actor):
         print(i)
 
 def of_genre(genre):
-    obj = collection.find({"genre" : genre})
+    obj = collection.find({"genres" : genre})
 
     for i in obj:
         print(i)
 
 def with_actors(actor0, actor1):
-    obj = collection.find({"$and" : [{"actor" : actor0}, {"actor" : actor1}] })
+    obj = collection.find({"$and" : [{"cast" : actor0}, {"cast" : actor1}] })
 
     for i in obj:
         print(i)
@@ -44,6 +44,6 @@ def with_actors(actor0, actor1):
 
 create("movies.json")
 #in_year(1900)
-#with_actor()
-of_genre("Crime")
-#with_actors()
+#with_actor("Bradley Cooper")
+#of_genre("Crime")
+with_actors("Bradley Cooper", "Clint Eastwood")
