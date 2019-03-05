@@ -36,5 +36,5 @@ def in_zip_below( zipcode, score ):
         
 #in_borough("Queens")
 #in_zip("11432")
-#in_zip_w_grade("11432", "Z")
+in_zip_w_grade("11432", "Z")
 #in_zip_below("11432" , 50)
