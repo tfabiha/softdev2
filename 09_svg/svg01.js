@@ -1,3 +1,8 @@
+// T Fabiha
+// SoftDev pd7
+// K09 -- basic SVG work
+// 2019-03-13w
+
 var pic = document.getElementById("vimage");
 var clear = document.getElementById("but_clear");
 
@@ -50,17 +55,16 @@ var drawCircle = function(e)
 
 var clearing = function(e)
 {
-    var c = document.createElementNS(
-    "http://www.w3.org/2000/svg", "circle");
+    var children = pic.children;
+    //console.log(children);
+    var size = children.length
+    
+    for (var i = 0; i < size; i++)
+    {
+	pic.removeChild(children[0]);
+    }
 
-    c.setAttribute( "r", "500" );
-    c.setAttribute( "fill", "white" );
-    c.setAttribute( "stroke", "white" );
-    c.setAttribute( "cx", 0 );
-    c.setAttribute( "cy", 0 );
-
-    pic.appendChild( c );
-
+    //console.log(children)
     prev = 0;
 };
 
