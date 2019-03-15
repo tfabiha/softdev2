@@ -22,6 +22,8 @@ var prev = 0;
 
 var drawCircle = function(e)
 {
+    e.preventDefault();
+    
     console.log( "[" + e.offsetX + ", " + e.offsetY + "]");
 
     if (prev != 0)
@@ -42,6 +44,7 @@ var drawCircle = function(e)
     var c = document.createElementNS(
     "http://www.w3.org/2000/svg", "circle");
 
+    c.style.pointerEvents = "none";
     c.setAttribute( "r", "10" );
     c.setAttribute( "fill", "red" );
     c.setAttribute( "stroke", "black" );
