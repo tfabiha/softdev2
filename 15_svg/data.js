@@ -1,11 +1,19 @@
+/*
+Team NoMansVoices -- Mai Rachlevsky && T Fabiha
+SoftDev2 pd7
+K15 -- Scattered... or: Smothered, Covered, Chunked, Diced, Peppered, Capped, Topped & Country
+2019-03-22f    
+*/
+
 var x = d3.scale.linear();
+var y = d3.scale.linear();
 
 var chart = d3.select(".chart");
 
 d3.tsv("data.tsv", type, function(error, data) {
 
-    var width = d3.max(data, function(a) { return a.Deaths; }) + 5;
-    var height = d3.max(data, function(a) { return a.Age; } );
+    var width = 1000;
+    var height = 400;
 
     console.log(width);
     console.log(height);
@@ -15,7 +23,9 @@ d3.tsv("data.tsv", type, function(error, data) {
     
     console.log(data)
     x.domain([0, d3.max(data, function(a) { return a.Deaths; })])
-	.range([0, d3.max(data, function(a) { return a.Age; })]);
+	.range([0, width]);
+    y.domain([0, d3.max(data, function(a) { return a.Age; })])
+	.range([0, height]);
 
     var scatter = chart.selectAll("g")
 	.data(data)
@@ -23,8 +33,8 @@ d3.tsv("data.tsv", type, function(error, data) {
 	.append("g");
 
     scatter.append("circle")
-	.attr( "cx", function(a) { return a.Deaths; } )
-	.attr( "cy", function(a) { return height - a.Age; } )
+	.attr( "cx", function(a) { return x(a.Deaths); } )
+	.attr( "cy", function(a) { return height - y(a.Age); } )
 	.attr( "r", 5);
 
 
