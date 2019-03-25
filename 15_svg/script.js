@@ -1,3 +1,12 @@
+// Team NoMansVoices -- Mai Rachlevsky
+// Softdev2 pd 7
+// K #15: Scattered...
+// 2019-03-25m
+
+//source: https://www.kaggle.com/unsdsn/world-happiness/version/2?fbclid=IwAR2OMugNWxf_LVIwhwR0MKFwBcbMxvodsi6ZYipiemKaWYz0qcmYQnv6qZQ
+// Data shows levels of happiness in comparison to different factors. We focused on its relation to trust in the government
+
+
 d3.csv('2017.csv', function (data) {
     // Variables
     var body = d3.select('body')
