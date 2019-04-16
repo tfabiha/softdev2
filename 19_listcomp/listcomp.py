@@ -1,4 +1,7 @@
-#Teeming Wldeas
+# Teeming Wldeas - Qian Zhou && T Fabiha
+# Softdev2 pd7 
+# K #19: Ready, Set, Math!
+# 2019-04-17
 
 # union of {1, 2, 3} and {2, 3, 4} is the set of {1, 2, 3, 4}
 def union(first, second):
