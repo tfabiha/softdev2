@@ -8,7 +8,11 @@ d3.queue()
 
 function ready( edu )
 {
-    edu.forEach(  )
+    console.log(edu);
+    edu.forEach( function(d)
+		 {
+		     data.append( d );
+		 });
 };
 
 console.log(data);
