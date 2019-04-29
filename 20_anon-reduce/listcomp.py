@@ -1,7 +1,9 @@
+# Team SkaterSquad - Emily Lee && T Fabiha
+
 from functools import reduce
 
 #read Grimm's Fairy Tails
-fd = open("tales.txt","r")
+fd = open("tales0.txt","r")
 lines = fd.read()
 lines = " ".join( lines.split("--") )
 lines = " ".join( lines.split("\n") )
@@ -18,16 +20,23 @@ def find_1( word ):
 
     return reduce( (lambda x, y: x + y), count_1 )
 
-print( find_1( "fox" ) )
-print( find_1( "to" ) )
+print( "count fox: {}".format( find_1( "fox" ) ) )
+print( "count to: {}".format( find_1( "to" ) ) )
 
 # Find the total frequency of a group of words
-def find_mult( li ):
-    count_mult = [ 1 for x in words if x in li ]
 
+def find_mult( li ):
+    count_mult = [ 1 for x in range(len(words)-len(li)+1) \
+                       for i in range(len(li)) \
+                       if " ".join([ y for y in words[x:len(li)+x] ]) \
+                       == " ".join([ y for y in li])]
+                       
+    if len( count_mult ) == 0:
+        return 0
+    
     return reduce( (lambda x, y: x + y), count_mult )
 
-print( find_mult( ["fox", "to"] ) )
+print( "count fox to: {}".format( find_mult( ["fox", "to"] ) ) )
 
 # Find the most frequently occurring word
 def findmost():
