@@ -2,7 +2,90 @@
 
 <html>
 
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="education.js"></script>
+  <body>
   
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <h2>
+    Mean students in a certain grade in all schools from 2006-2012.
+  </h2>
+
+  Grade:
+    <select id="grade_select" name="grade_select">
+      <option value="-1">PreK</option>
+      <option value="0">Kindergarten</option>
+      <option value="1">First</option>
+      <option value="2">Second</option>
+      <option value="3">Third</option>
+      <option value="4">Fourth</option>
+      <option value="5">Fifth</option>
+      <option value="6">Sixth</option>
+      <option value="7">Seventh</option>
+      <option value="8">Eighth</option>
+      <option value="9">Ninth</option>
+      <option value="10">Tenth</option>
+      <option value="11">Eleventh</option>
+      <option value="12">Twelveth</option>
+    </select>
+
+    <br>
+      
+    <button id="grade_submit">Submit</button>
+
+    <h4 id="grade_display"></h4>
+
+    <hr>
+
+    <h2>
+      Mean percentage of a certain race in a particular school.
+    </h2>
+
+    Race:
+    <select id="race_select" name="race_select">
+      <option value="asian">Asian</option>
+      <option value="black">Black</option>
+      <option value="hispanic">Hispanic</option>
+      <option value="white">White</option>
+    </select>
+
+    <br>
+    
+    Schoolname (IN ALL CAPS):
+    <input type="text" id="school_select" name="school_select">
+
+    <br>
+    
+    <button id="race_n_school_submit">Submit</button>
+
+    <h4 id="race_n_school_display"></h4>
+
+    <hr>
+    
+    <h2>
+      Mean percentage of females from a school with a certain number of students in a specific starting school year.
+    </h2>
+
+    Schoolyear:
+    <select id="schoolyear_select" name="schoolyear_select">
+      <option value="2005">2005 - 2006</option>
+      <option value="2006">2006 - 2007</option>
+      <option value="2007">2007 - 2008</option>
+      <option value="2008">2008 - 2009</option>
+    </select>
+
+    <br>
+    
+    The least numer of total students:
+    <input type="number" id="students_select" name="students_select">
+
+    <br>
+    
+    <button id="females_submit">Submit</button>
+
+    <h4 id="females_display"></h4>
+
+    <script src="education.js"></script>
+    
+    </body>
+    
 </html>
