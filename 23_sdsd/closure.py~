@@ -1,0 +1,7 @@
+import random
+
+def make_HTML_heading(f):
+    txt = f()
+    def inner():
+        return "<h1>" + txt + "</h1>"
+    return inner
