@@ -23,7 +23,9 @@ def memoize(f):
     def helper(x):
         nonlocal memo
 
-        if memo[x-1] 
+        if (x - 1) in memo:
+            memo[x] = memo[x-1] * memo[x-2]
+        else:
         
     return helper
 
