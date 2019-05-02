@@ -24,15 +24,18 @@ def memoize(f):
         nonlocal memo
 
         if (x) in memo:
-            return memo[x]
-        
+            return memo.get(x)
+
+        """
         if (x - 1) in memo == False:
             memo[x - 1] = fib(x - 1)
         if (x - 2) in memo == False:
             memo[x - 2] = fib(x - 2)
 
-        memo[x] = memo[x - 1] * memo[x - 2]
-        return memo[x]
+        memo[x] = memo.get(x - 1) + memo.get(x - 2)
+        """
+        memo[x] = fib(x)
+        return memo.get(x)
             
         
     return helper
@@ -46,4 +49,5 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 
 something = memoize(fib)
-print( something(40) )
+print( something(20) )
+print( something(20) )
