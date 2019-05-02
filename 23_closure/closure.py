@@ -23,9 +23,17 @@ def memoize(f):
     def helper(x):
         nonlocal memo
 
-        if (x - 1) in memo:
-            memo[x] = memo[x-1] * memo[x-2]
-        else:
+        if (x) in memo:
+            return memo[x]
+        
+        if (x - 1) in memo == False:
+            memo[x - 1] = fib(x - 1)
+        if (x - 2) in memo == False:
+            memo[x - 2] = fib(x - 2)
+
+        memo[x] = memo[x - 1] * memo[x - 2]
+        return memo[x]
+            
         
     return helper
 
@@ -37,5 +45,5 @@ def fib(n):
     else:
         return fib(n-1) + fib(n-2)
 
-fib = memoize(fib)
-print( fib(40) )
+something = memoize(fib)
+print( something(40) )
