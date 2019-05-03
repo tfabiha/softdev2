@@ -1,3 +1,8 @@
+# T Fabiha
+# Softdev pd 7
+# K23: Memoize With Closure
+# 2019-05-02
+
 import random
 
 def make_HTML_heading(f):
@@ -49,5 +54,6 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 
 something = memoize(fib)
-print( something(20) )
-print( something(20) )
+print("starting fib 20...")
+print( "fib 20: {}".format(something(20)) )
+print( "fib 20: {}".format(something(20)) )
